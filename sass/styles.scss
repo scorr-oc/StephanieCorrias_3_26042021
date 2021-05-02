@@ -1,0 +1,290 @@
+/*variables*/
+$font-title: 'Shrikhand', cursive;
+$font-text: 'roboto', sans-serif;
+$font-bold: bold;
+$font-color1: black;
+$font-color2: white;
+$primary-color: #9356dc;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$primary-background-color: #f2f2f2;
+$secondary-bg-color: white;
+$footer-bg-color:rgb(43, 41, 41);
+
+
+
+/*mixins*/
+@mixin row{
+    text-align: center;
+}
+@mixin btn-gradient{
+    background: rgb(175,104,219);
+    background: linear-gradient(291deg, rgba(175,104,219,0.8351540445279675) 44%, rgba(196,109,219,1) 59%, rgba(255,121,218,1) 100%);
+}
+@mixin btn-radius {
+    border-radius: 25px;
+}
+@mixin card-radius {
+    border-radius: 20px;
+}
+@mixin number-form ($background-color:$primary-color){
+    background-color:$background-color;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 5px;
+    line-height: 20px;
+    text-align: center;
+    color: $font-color2; 
+ }
+@mixin shadow {
+    box-shadow: -4px 5px 5px rgb(226, 223, 223);
+ }
+@mixin margin{
+    margin-left: 10px;
+}
+
+body {
+    font-family: $font-text;
+}
+h1 {
+    font-family: $font-title;
+}
+h2 {
+    @include margin;
+}
+
+
+header {
+    @include row;
+    & a {
+        float: left;
+        color: $font-color1;
+        margin-top: 5px;
+        margin-left: 15px;
+    }
+}
+
+/*mise ne page section research - page accueil*/
+
+#research {
+    width: 100%;
+    @include row;
+    background-color: $primary-background-color;
+    padding-bottom: 50px;
+}
+
+.container {
+    position: relative;
+    &__icone { 
+        position: absolute;
+        margin-left:32% ;
+        padding-top: 3px;
+    }
+    &__research{
+        background-color: darken($primary-background-color,10%);
+        width: 100%;
+        height: 20px;
+        @include row;
+    }
+}
+
+.btn{
+    @include btn-gradient;
+    @include btn-radius;
+    @include shadow;
+    font-weight: $font-bold;
+    color: $font-color2;
+    border: none;
+    padding: 15px;
+    
+}
+
+/* mise en page section fonctionnement - page accueil*/
+
+.functionning {
+    padding: 15px;
+    margin-bottom: 20px;
+    &__list{
+    display: flex;
+    align-items: center;
+    width: 95%;
+    background-color: mix(white,$primary-background-color,50%);
+    @include btn-radius;
+    @include shadow;
+    margin-bottom: 20px; 
+    & i {
+        color: gray;
+        margin-left: 50px;
+    }
+    & p {
+        margin-left: 50px;
+        font-weight: $font-bold;
+    }
+    } 
+    &__number {
+        @include number-form($primary-color);
+        position: absolute;
+ 
+    }  
+}
+.functionning__list:hover {
+    background-color: mix(white,$primary-color,80%);
+    & i {
+        color: $primary-color;
+    }
+}
+
+/* mise en page cartes restaurants - page accueil*/
+
+.restaurant {
+    background-color: $primary-background-color;
+    padding: 15px;
+    
+}   
+
+.restaurant-card {
+    text-decoration: none;
+    color: $font-color1;
+    & figure {
+        margin: 10px;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+        background-color: $secondary-bg-color;
+        @include card-radius;
+        @include shadow;
+        
+    }
+    & figure img
+    {   width: 100%;
+        height: 150px;
+        border-radius: 20px 20px 0 0;
+        object-fit: cover;
+    }
+    & figcaption {
+        font-weight: $font-bold;
+        margin-top: 5px;
+        @include margin;
+        width: 75%;
+    }
+    & p {
+        margin-top: 0;
+        @include margin;
+    }
+    & p i {
+        margin-left: 50%;      
+    }
+}
+
+/*mise en page feuilles menus*/
+
+.img-title {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.body-page {
+    background-color: $primary-background-color;
+    border-radius: 30px 30px 0 0;
+    margin-top: -50px;
+    padding-bottom: 15px;
+    position: relative;
+    &__title {
+        display: flex;
+        justify-content: space-between;
+
+    }
+        & h1 {
+            margin:0;
+            padding-top: 20px;
+            @include margin;
+            font-size: 1.8rem;
+        }
+        & i {
+            margin-top: 32px;
+            margin-right: 30px;
+            font-size: 1.3rem;
+        }        
+}
+
+.menu-detail h2{
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1rem;
+    border-bottom: 3px solid $tertiary-color;
+    padding-bottom: 5px;
+    display: inline-block;
+    width: 40px;  
+}
+
+.meal {
+    background-color: $secondary-bg-color;
+    border-radius: 10px;
+    @include shadow;
+    @include margin;
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 10px;
+
+    & h3 {
+        margin: 0;
+        @include margin;
+        font-size: 1rem;
+    }
+    & p {
+        margin: 0;
+        @include margin;
+        margin-right: 15px;
+        font-size: 0.8rem;
+    }
+    &__price {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.btn-order {
+    @include row;
+    padding: 15px;
+}
+
+
+/*mise en page footer*/
+.footer {
+    background-color: $footer-bg-color;
+    padding: 15px;
+    & h3 {
+        font-family: $font-title;
+        color: $font-color2;
+        @include margin;
+        margin: 0;
+        padding: 15px;
+    }
+    & ul {
+        list-style-type: none;
+        @include margin;
+        margin: 0;
+        padding: 15px;
+    }
+    & ul li a {
+        text-decoration: none;
+        color: $font-color2;
+    }
+    & ul li a i{
+        margin-right: 5%;
+    }
+}
+
+    
+
+
+
+
+
+
+
+
+
+
+
