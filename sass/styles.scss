@@ -29,11 +29,11 @@ $footer-bg-color:rgb(43, 41, 41);
 }
 @mixin number-form ($background-color:$primary-color){
     background-color:$background-color;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     padding: 5px;
-    line-height: 20px;
+    line-height: 10px;
     text-align: center;
     color: $font-color2; 
  }
@@ -46,6 +46,10 @@ $footer-bg-color:rgb(43, 41, 41);
 
 body {
     font-family: $font-text;
+    margin:0;
+}
+header {
+    margin:15px;
 }
 h1 {
     font-family: $font-title;
@@ -108,11 +112,12 @@ header {
     &__list{
     display: flex;
     align-items: center;
-    width: 95%;
+    width: 98%;
     background-color: mix(white,$primary-background-color,50%);
-    @include btn-radius;
+    @include card-radius;
     @include shadow;
     margin-bottom: 20px; 
+    margin-left: 10px;
     & i {
         color: gray;
         margin-left: 50px;
@@ -125,6 +130,8 @@ header {
     &__number {
         @include number-form($primary-color);
         position: absolute;
+        margin-top: 15px;
+        font-size: 0.8rem;
  
     }  
 }
@@ -161,18 +168,26 @@ header {
         border-radius: 20px 20px 0 0;
         object-fit: cover;
     }
-    & figcaption {
+    & figure div{
+        display: flex;
+        justify-content: space-between;
+    }
+    & figure h3 {
         font-weight: $font-bold;
         margin-top: 5px;
+        margin-bottom: 5px;
         @include margin;
-        width: 75%;
     }
     & p {
         margin-top: 0;
         @include margin;
     }
-    & p i {
-        margin-left: 50%;      
+    &__heart {
+        font-size: 1.5rem;
+        color: gray; 
+        margin-right: 10%;
+        margin-top: -4%;
+
     }
 }
 
