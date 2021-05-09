@@ -7,7 +7,7 @@
         <script src="https://kit.fontawesome.com/be7593c075.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Shrikhand&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap" rel="stylesheet"> 
     </head>
 
     <body>
@@ -16,16 +16,17 @@
         </header>
 
         <!-- formulaire de recherche-->
-        <section id="research">
+        <section class="research">
             <form method="POST" action="donnees.php">
                 <div class="container">
                     <span class="container__icone"><i class="fas fa-map-marker-alt"></i></span>
                     <input type="text" name="localisation" value="Paris, Belleville" class="container__research"/>
                 </div>
-                <h2>Réservez le menu qui vous convient</h2>
-                <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
-                <input type="button" value="Explorer nos restaurants" class="btn"/>
-            </form>
+            </form>  
+            <h2>Réservez le menu qui vous convient</h2>
+            <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
+            <a href="#restaurant" class="btn">Explorer nos restaurants</a>
+                   
 
         </section>
 
@@ -50,11 +51,14 @@
         </section>
 
         <!--cartes des restaurants-->
-        <section class="restaurant">
+        <section class="restaurant" id="restaurant">
             <h2>Restaurants</h2>
             <a href="la_palette_du_gout.html" class="restaurant-card">
                 <figure>
-                    <img src="images/la_palette_du_gout.jpg" alt="photoduplat"/>
+                    <div class="restaurant-card__img">
+                        <img src="images/la_palette_du_gout.jpg" alt="photoduplat"/>
+                        <div>Nouveau</div>
+                    </div>
                     <h3>La palette du goût</h3>
                     <div>
                         <p>Ménilmontant</p>
@@ -64,7 +68,10 @@
             </a>
             <a href="la_note_enchantee.html" class="restaurant-card">
                 <figure>
-                    <img src="images/la_note_enchantee.jpg" alt="photoduplat"/>
+                    <div class="restaurant-card__img">
+                        <img src="images/la_note_enchantee.jpg" alt="photoduplat"/>
+                        <div>Nouveau</div>
+                    </div>
                     <h3>La note enchantée</h3>
                     <div>
                         <p>Charonne</p>
@@ -74,7 +81,9 @@
             </a>
             <a href="a_la_francaise.html" class="restaurant-card">
                 <figure>
-                    <img src="images/a_la_francaise.jpg" alt="photoduplat"/>
+                    <div class="restaurant-card__img">
+                      <img src="images/a_la_francaise.jpg" alt="photoduplat"/>
+                    </div>
                     <h3>A la française</h3>
                     <div>
                         <p>Cité rouge</p>
@@ -83,8 +92,10 @@
                 </figure>
             </a>
             <a href="le_delice_des_sens.html" class="restaurant-card">
-                <figure>
-                    <img src="images/le_delice_des_sens.jpg" alt="photoduplat"/>
+                <figure>  
+                    <div class="restaurant-card__img">
+                       <img src="images/le_delice_des_sens.jpg" alt="photoduplat"/>
+                   </div>
                     <h3>Le délice des sens</h3>
                     <div>
                         <p>Folie-Méricourt</p>
