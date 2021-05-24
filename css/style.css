@@ -1,5 +1,27 @@
 /*variables*/
 /*mixins*/
+/*keyframes*/
+@keyframes full-heart {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
 body {
   font-family: "roboto", sans-serif;
   width: 100%;
@@ -26,6 +48,21 @@ header a {
   color: black;
   margin-top: 5px;
   margin-left: 15px;
+}
+
+/* loader spinner */
+.loader-spinner {
+  border: 30px solid black;
+  border-top: 30px solid #9356dc;
+  border-right: 30px inset #99E2D0;
+  border-bottom: 30px solid #FF79DA;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  z-index: 3;
+  opacity: 0;
+  display: flex;
+  animation: loader 2s linear backwards;
 }
 
 /*mise ne page section research - page accueil*/
@@ -57,13 +94,14 @@ header a {
   border: none;
   box-shadow: inset -4px 2px 2px #dad8d8;
   text-align: center;
-  padding: 10px;
+  padding: 10px 0 10px 0;
   font-size: 1rem;
 }
 
 .btn {
   background: #af68db;
   background: linear-gradient(357deg, #af68db 35%, #ff79da 100%);
+  opacity: 1;
   border-radius: 25px;
   box-shadow: -4px 5px 5px #e2dfdf;
   color: white;
@@ -71,6 +109,10 @@ header a {
   padding: 15px 25px;
   font-size: 16px;
   text-decoration: none;
+}
+.btn:hover {
+  opacity: 0.9;
+  box-shadow: -4px 5px 5px #665c5c;
 }
 
 /* mise en page section fonctionnement - page accueil*/
@@ -124,6 +166,33 @@ header a {
   padding: 15px;
 }
 
+.restaurant-list {
+  position: relative;
+}
+
+.heart {
+  position: absolute;
+  font-size: 1.5rem;
+  color: gray;
+  border: none;
+  background-color: white;
+  top: 76%;
+  left: 82%;
+}
+.heart__progress {
+  position: absolute;
+  opacity: 0;
+  font-size: 1.5rem;
+  color: gray;
+  border: none;
+  background-color: white;
+  top: 76%;
+  left: 82%;
+}
+.heart__progress:active {
+  animation: full-heart 300ms ease-out both;
+}
+
 .restaurant-card {
   text-decoration: none;
   color: black;
@@ -168,12 +237,6 @@ header a {
 .restaurant-card p {
   margin-top: 0;
   margin-left: 10px;
-}
-.restaurant-card__heart {
-  font-size: 1.5rem;
-  color: gray;
-  margin-right: 10%;
-  margin-top: -4%;
 }
 
 /*mise en page feuilles menus*/
