@@ -11,6 +11,8 @@
     </head>
 
     <body>
+
+        <div class=loader-spinner></div>
         <header>
             <img src="images/ohmyfood@2x.svg" alt="logo">
         </header>
@@ -53,44 +55,55 @@
         <!--cartes des restaurants-->
         <section class="restaurant" id="restaurant">
             <h2>Restaurants</h2>
-            <a href="la_palette_du_gout.html" class="restaurant-card">
-                <figure>
-                    <div class="restaurant-card__img">
-                        <img src="images/la_palette_du_gout.jpg" alt="photoduplat"/>
-                        <div>Nouveau</div>
-                    </div>
-                    <h3>La palette du goût</h3>
-                    <div>
-                        <p>Ménilmontant</p>
-                        <span class="restaurant-card__heart"><i class="far fa-heart"></i></span>
-                    </div>
-                </figure>
-            </a>
-            <a href="la_note_enchantee.html" class="restaurant-card">
-                <figure>
-                    <div class="restaurant-card__img">
-                        <img src="images/la_note_enchantee.jpg" alt="photoduplat"/>
-                        <div>Nouveau</div>
-                    </div>
-                    <h3>La note enchantée</h3>
-                    <div>
-                        <p>Charonne</p>
-                        <span class="restaurant-card__heart"><i class="far fa-heart"></i></span>
-                    </div>
-                </figure>
-            </a>
-            <a href="a_la_francaise.html" class="restaurant-card">
-                <figure>
-                    <div class="restaurant-card__img">
-                      <img src="images/a_la_francaise.jpg" alt="photoduplat"/>
-                    </div>
-                    <h3>A la française</h3>
-                    <div>
-                        <p>Cité rouge</p>
-                        <span class="restaurant-card__heart"><i class="far fa-heart"></i></span>
-                    </div>
-                </figure>
-            </a>
+            <div class="restaurant-list">
+                <a href="la_palette_du_gout.html" class="restaurant-card">
+                    <figure>
+                        <div class="restaurant-card__img">
+                            <img src="images/la_palette_du_gout.jpg" alt="photoduplat"/>
+                            <div>Nouveau</div>
+                        </div>
+                        <h3>La palette du goût</h3>
+                        <div>
+                            <p>Ménilmontant</p>
+                        </div>
+                    </figure>
+                </a>
+                <div class="heart"><i class="far fa-heart"></i></div>
+                <div class="heart__progress"><i class="fas fa-heart"></i></div>
+            </div>
+            <div class="restaurant-list">
+                <a href="la_note_enchantee.html" class="restaurant-card">
+                    <figure>
+                        <div class="restaurant-card__img">
+                            <img src="images/la_note_enchantee.jpg" alt="photoduplat"/>
+                            <div>Nouveau</div>
+                        </div>
+                        <h3>La note enchantée</h3>
+                        <div>
+                            <p>Charonne</p>
+                        </div>
+                    </figure>
+                </a>
+                <div class="heart"><i class="far fa-heart"></i></div>
+                <div class="heart__progress"><i class="fas fa-heart"></i></div>
+            </div>
+            <div class="restaurant-list">
+                <a href="a_la_francaise.html" class="restaurant-card">
+                    <figure>
+                        <div class="restaurant-card__img">
+                        <img src="images/a_la_francaise.jpg" alt="photoduplat"/>
+                        </div>
+                        <h3>A la française</h3>
+                        <div>
+                            <p>Cité rouge</p>
+                        </div>
+                    </figure>
+                </a>
+                <div class="heart"><i class="far fa-heart"></i></div>
+                <div class="heart__progress"><i class="fas fa-heart"></i></div>
+                
+            </div>
+            <div class="restaurant-list">  
             <a href="le_delice_des_sens.html" class="restaurant-card">
                 <figure>  
                     <div class="restaurant-card__img">
@@ -99,10 +112,12 @@
                     <h3>Le délice des sens</h3>
                     <div>
                         <p>Folie-Méricourt</p>
-                        <span class="restaurant-card__heart"><i class="far fa-heart"></i></span>
                     </div>
                 </figure>   
             </a>
+            <div class="heart"><i class="far fa-heart"></i></div>
+            <div class="heart__progress"><i class="fas fa-heart"></i></div>
+            </div>
         </section>
 
         <!--footer-->
