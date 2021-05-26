@@ -4,9 +4,11 @@
 @keyframes full-heart {
   0% {
     opacity: 0;
+    z-index: 0;
   }
   100% {
     opacity: 1;
+    z-index: 1;
   }
 }
 @keyframes loader {
@@ -15,6 +17,16 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    z-index: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
   }
 }
 body {
@@ -46,27 +58,17 @@ header a {
 }
 
 /* loader spinner */
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-    z-index: 100;
-  }
-  to {
-    opacity: 0;
-    z-index: -1000;
-  }
-}
 .loader {
   background-color: white;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  overflow: hidden;
-  z-index: 100;
   opacity: 0;
-  animation: fadeOut 2s ease-in-out;
+  animation: fadeOut 3s ease-in-out forwards;
 }
 .loader__spinner {
   border: 10px solid black;
@@ -76,12 +78,9 @@ header a {
   border-radius: 50%;
   width: 80px;
   height: 80px;
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  animation: loader 3s linear;
-  animation-iteration-count: 2;
+  margin: auto;
+  margin-top: 50%;
+  animation: loader 2s linear;
 }
 
 /*mise ne page section research - page accueil*/
@@ -102,7 +101,7 @@ header a {
 }
 .container__icone {
   position: absolute;
-  margin-left: 30%;
+  margin-left: 28%;
   padding-top: 3px;
   padding: 10px;
 }
@@ -196,6 +195,7 @@ header a {
   border: none;
   top: 76%;
   left: 82%;
+  z-index: -1;
 }
 .heart__progress {
   position: absolute;
@@ -205,10 +205,10 @@ header a {
   top: 76%;
   left: 82%;
   color: #9356dc;
-  z-index: 10;
+  z-index: 1;
 }
 .heart__progress:active {
-  animation: full-heart 300ms ease-in both;
+  animation: full-heart 400ms ease-in-out forwards;
 }
 
 .restaurant-card {
@@ -286,8 +286,31 @@ header a {
   font-size: 1.3rem;
 }
 
+@keyframes appearance-slight {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+}
 .menu-detail {
   margin: 15px;
+  /*
+  opacity: 0;
+  transform: translateY(0);
+  animation: appearance-slight 2s ease-in-out forwards;
+  &:nth-child(2) {
+      animation-delay: 0.5s;
+  }
+  &:nth-child(3) {
+      animation-delay: 1s;
+  }
+  &:nth-child(4) {
+      animation-delay: 1.5s;
+  }*/
 }
 .menu-detail h2 {
   text-transform: uppercase;
@@ -307,6 +330,19 @@ header a {
   width: 90%;
   margin-bottom: 20px;
   padding: 10px;
+  /*
+  opacity: 0;
+  transform: translateY(0);
+  animation: appearance-slight 2s ease-in-out forwards;
+  &:nth-child(2) {
+      animation-delay: 0.5s;
+  }
+  &:nth-child(3) {
+      animation-delay: 1s;
+  }
+  &:nth-child(4) {
+      animation-delay: 1.5s;
+  }  */
 }
 .meal h3 {
   margin: 0;
