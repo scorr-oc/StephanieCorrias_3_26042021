@@ -4,11 +4,9 @@
 @keyframes full-heart {
   0% {
     opacity: 0;
-    z-index: 0;
   }
   100% {
     opacity: 1;
-    z-index: 1;
   }
 }
 @keyframes loader {
@@ -195,7 +193,6 @@ header a {
   border: none;
   top: 76%;
   left: 82%;
-  z-index: -1;
 }
 .heart__progress {
   position: absolute;
@@ -205,7 +202,6 @@ header a {
   top: 76%;
   left: 82%;
   color: #9356dc;
-  z-index: 1;
 }
 .heart__progress:active {
   animation: full-heart 400ms ease-in-out forwards;
