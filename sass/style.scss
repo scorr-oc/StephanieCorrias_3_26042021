@@ -52,10 +52,6 @@ $color-shadow:rgb(226, 223, 223);
     {
         opacity: 0;
     }
-    50%
-    {
-        opacity: 0.5;
-    }
     100%
     {
         opacity: 1;
@@ -66,12 +62,10 @@ $color-shadow:rgb(226, 223, 223);
     from    
     {
          transform: rotate(0deg);
-         opacity: 0;
     }
     to
     {
         transform: rotate(360deg);
-        opacity: 1;
     }
  }
 
@@ -101,24 +95,47 @@ header {
     }
 }
  /* loader spinner */
-
+ @keyframes fadeOut {
+    from {
+        opacity: 1;
+        z-index: 100;
+    }
+    to {
+       opacity: 0;
+       z-index: -1000;
+    }
+  }
+  
  
-
- .loader-spinner {
-
-    border: 30px solid $font-color1;
-    border-top: 30px solid $primary-color;
-    border-right: 30px inset $tertiary-color;
-    border-bottom: 30px solid $secondary-color;
-    border-radius: 50%;
-    width: 300px;
-    height: 300px;
-    z-index: 3;
+ .loader {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 100;
     opacity: 0;
-    display: flex;
-    animation: loader 2s linear backwards;
+    animation: fadeOut 2s ease-in-out;
+     &__spinner {
+        border: 10px solid $font-color1;
+        border-top: 10px solid $primary-color;
+        border-right: 10px inset $tertiary-color;
+        border-bottom: 10px solid $secondary-color;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%,50%);
+        animation: loader 3s linear;
+        animation-iteration-count: 2;
+     }
  }
 
+    
 /*mise ne page section research - page accueil*/
 
 .research {
@@ -224,22 +241,21 @@ header {
 .heart {
     position: absolute;
     font-size: 1.5rem;
-    color: gray;
+    color:gray;
     border: none;
-    background-color: white; 
     top: 76%;
     left: 82%;
     &__progress {
         position: absolute;
         opacity: 0;
         font-size: 1.5rem;
-        color: gray;
         border: none;
-        background-color: white; 
         top: 76%;
-        left: 82%; 
+        left: 82%;
+        color:$primary-color;
+        z-index: 10;
         &:active {
-            animation: full-heart 300ms ease-out both;
+            animation: full-heart 300ms ease-in both;
         }  
     }   
 }

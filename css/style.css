@@ -5,9 +5,6 @@
   0% {
     opacity: 0;
   }
-  50% {
-    opacity: 0.5;
-  }
   100% {
     opacity: 1;
   }
@@ -15,11 +12,9 @@
 @keyframes loader {
   from {
     transform: rotate(0deg);
-    opacity: 0;
   }
   to {
     transform: rotate(360deg);
-    opacity: 1;
   }
 }
 body {
@@ -51,18 +46,42 @@ header a {
 }
 
 /* loader spinner */
-.loader-spinner {
-  border: 30px solid black;
-  border-top: 30px solid #9356dc;
-  border-right: 30px inset #99E2D0;
-  border-bottom: 30px solid #FF79DA;
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
-  z-index: 3;
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    z-index: 100;
+  }
+  to {
+    opacity: 0;
+    z-index: -1000;
+  }
+}
+.loader {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: 100;
   opacity: 0;
-  display: flex;
-  animation: loader 2s linear backwards;
+  animation: fadeOut 2s ease-in-out;
+}
+.loader__spinner {
+  border: 10px solid black;
+  border-top: 10px solid #9356dc;
+  border-right: 10px inset #99E2D0;
+  border-bottom: 10px solid #FF79DA;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  animation: loader 3s linear;
+  animation-iteration-count: 2;
 }
 
 /*mise ne page section research - page accueil*/
@@ -175,7 +194,6 @@ header a {
   font-size: 1.5rem;
   color: gray;
   border: none;
-  background-color: white;
   top: 76%;
   left: 82%;
 }
@@ -183,14 +201,14 @@ header a {
   position: absolute;
   opacity: 0;
   font-size: 1.5rem;
-  color: gray;
   border: none;
-  background-color: white;
   top: 76%;
   left: 82%;
+  color: #9356dc;
+  z-index: 10;
 }
 .heart__progress:active {
-  animation: full-heart 300ms ease-out both;
+  animation: full-heart 300ms ease-in both;
 }
 
 .restaurant-card {
