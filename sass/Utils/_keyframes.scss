@@ -1,0 +1,53 @@
+/*keyframes*/
+@keyframes full-heart {
+    0%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }    
+}
+
+@keyframes loader {
+    from    
+    {
+         transform: rotate(0deg);
+    }
+    to
+    {
+        transform: rotate(360deg);
+    }
+ }
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        z-index: 1;
+    }
+    to {
+       opacity: 0;
+       z-index: -1;
+    }
+  }
+@keyframes btn {
+    from {
+        opacity: 1;
+        @include shadow;
+    }
+    to {
+        opacity: 0.9;
+        @include btn-shadow;
+    }
+    
+}
+@keyframes appearance-slight {
+    from {
+        opacity: 0;
+
+    }
+    to {
+        opacity: 1;
+    }    
+}

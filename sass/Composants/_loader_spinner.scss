@@ -1,0 +1,25 @@
+/* loader spinner */
+
+.loader {
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    animation: fadeOut 3s ease-in-out forwards;
+     &__spinner {
+        border: 10px solid $font-color1;
+        border-top: 10px solid $primary-color;
+        border-right: 10px inset $tertiary-color;
+        border-bottom: 10px solid $secondary-color;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        margin: 50% auto auto;
+        animation: loader 2s linear;
+    }
+}

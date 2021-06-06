@@ -1,3 +1,52 @@
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /*mise en page page d'accueil*/
+  /*section fonctionnement*/
+  .functionning {
+    display: flex;
+  }
+  .functionning__number {
+    position: static;
+    margin-top: 6%;
+    z-index: 2;
+    font-size: 1rem;
+  }
+  .functionning__list {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    margin-left: -1%;
+    margin-right: 10px;
+    z-index: 0;
+  }
+  .functionning__list i {
+    margin-left: 0;
+  }
+  .functionning__list p {
+    margin-left: 0;
+  }
 
+  /*section cartes des restaurants*/
+  .restaurant {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .restaurant-list {
+    width: 50%;
+  }
+
+  /* mise en page page menu*/
+  .menu-detail {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .menu-detail h2 {
+    margin-right: 60%;
+  }
+
+  .meal {
+    width: 45%;
+  }
+}
 
 /*# sourceMappingURL=tablette.css.map */

@@ -1,0 +1,36 @@
+/*mixins*/
+@mixin row{
+    text-align: center;
+}
+@mixin btn-gradient{
+    background: rgb(175,104,219);
+    background: linear-gradient(357deg,rgba(175,104,219) 35%, rgba(255,121,218,1) 100%);
+    opacity: 1;
+}
+@mixin btn-radius {
+    border-radius: 25px;
+}
+@mixin card-radius {
+    border-radius: 20px;
+}
+@mixin number-form ($background-color:$primary-color){
+    background-color:$background-color;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    padding: 5px;
+    line-height: 10px;
+    text-align: center;
+    color: $font-color2; 
+ }
+@mixin shadow {
+    box-shadow: -4px 5px 5px $color-shadow;
+ }
+
+@mixin btn-shadow {
+    box-shadow: -4px 5px 5px darken($color-shadow,50%);
+}
+
+@mixin margin{
+    margin-left: 10px;
+}

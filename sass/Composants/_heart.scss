@@ -1,0 +1,20 @@
+.heart {
+    position: absolute;
+    font-size: 1.5rem;
+    color:gray;
+    border: none;
+    top: 76%;
+    left: 82%;
+    &__progress {
+        position: absolute;
+        opacity: 0;
+        font-size: 1.5rem;
+        border: none;
+        top: 76%;
+        left: 82%;
+        color:$primary-color;
+        &:hover {
+            animation: full-heart 400ms ease-in-out forwards;
+        }  
+    }   
+}
