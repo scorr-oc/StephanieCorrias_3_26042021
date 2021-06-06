@@ -1,0 +1,14 @@
+
+.btn {
+    @include btn-gradient;
+    @include btn-radius;
+    @include shadow;
+    color: $font-color2;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    text-decoration: none; 
+    &:hover {
+        animation: btn 0.8s ease-in-out forwards;      
+    }  
+}

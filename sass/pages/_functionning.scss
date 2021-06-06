@@ -1,0 +1,38 @@
+/* mise en page section fonctionnement - page accueil*/
+
+.functionning {
+    padding: 15px;
+    margin-bottom: 20px;
+    &__list{
+    display: flex;
+    align-items: center;
+    width: 98%;
+    background-color: mix(white,$primary-background-color,50%);
+    @include card-radius;
+    @include shadow;
+    margin-bottom: 20px; 
+    margin-left: 10px;
+    padding: 10px 0;
+        i {
+            color: gray;
+            margin-left: 50px;
+            font-size: 1.1rem;
+        }
+        p {
+            margin-left: 50px;
+        }
+    } 
+    &__number {
+        @include number-form($primary-color);
+        position: absolute;
+        margin-top: 25px;
+        font-size: 0.8rem;
+ 
+    }  
+}
+.functionning__list:hover {
+    background-color: mix(white,$primary-color,80%);
+    i {
+        color: $primary-color;
+    }
+}

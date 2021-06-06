@@ -1,0 +1,52 @@
+
+.restaurant-list {
+    position: relative;   
+}
+
+.restaurant-card {
+    text-decoration: none;
+    color: $font-color1;
+    figure {
+        margin: 10px 10px 20px;
+        padding-bottom: 5px;
+        background-color: $secondary-bg-color;
+        @include card-radius;
+        @include shadow;
+        div{
+            display: flex;
+            justify-content: space-between;
+        }
+        h3 {
+            font-weight: $font-bold;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            @include margin;
+        }
+        
+    }
+    &__img {
+    
+        position: relative;
+            img 
+            {   width: 100%;
+                height: 150px;
+                border-radius: 20px 20px 0 0;
+                object-fit: cover;
+                
+            }
+            div {
+                position:absolute;
+                background-color: $tertiary-color; 
+                top: 10%;
+                left: 75%;
+                color: darken($tertiary-color, 30%);
+                font-weight: bold;   
+                font-size: small; 
+                padding: 5px 10px;    
+        }
+    }
+    p {
+        margin-top: 0;
+        @include margin;
+    }
+}

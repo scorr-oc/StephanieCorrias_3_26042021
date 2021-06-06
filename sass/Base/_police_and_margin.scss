@@ -1,0 +1,19 @@
+body {
+    font-family: $font-text;
+    width: 100%;
+    margin: 0;
+}
+h1 {
+    font-family: $font-title;
+}
+h2 {
+    @include margin;
+}
+
+/* mise en page cartes restaurants - page accueil*/
+
+.restaurant {
+    background-color: $primary-background-color;
+    padding: 15px;
+    
+} 

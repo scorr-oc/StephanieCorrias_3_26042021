@@ -1,0 +1,157 @@
+/*mise en page feuilles menus*/
+
+.img-title {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.body-page {
+    background-color: $primary-background-color;
+    border-radius: 30px 30px 0 0;
+    margin-top: -50px;
+    padding-bottom: 15px;
+    position: relative;
+    &__title {
+        display: flex;
+        justify-content: space-between;
+
+    }
+        h1 {
+            padding-top: 20px;
+            margin: 25px;
+            font-size: 1.5rem;
+        }
+        .far {
+            margin-top: 50px;
+            margin-left: 85%;
+            font-size: 1.5rem;
+            color: gray;
+            position: absolute;
+        }
+        .fas {
+            position: absolute;
+            font-size: 1.5rem;
+            margin-left: 85%;
+            margin-top: 50px;
+            opacity: 0;
+            color:$primary-color;
+            &:hover {
+                animation: full-heart 400ms ease-in-out forwards;
+        }  
+
+        
+        }
+
+}
+
+.menu-detail{
+
+    margin: 15px;
+    h2{
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 1rem;
+    border-bottom: 3px solid $tertiary-color;
+    padding-bottom: 5px;
+    display: inline-block;
+    width: 40px;  
+    }
+}
+
+.meal {
+    background-color: $secondary-bg-color;
+    border-radius: 10px;
+    @include shadow;
+    @include margin;
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 10px;
+    transform: translateY(0);
+    animation: appearance-slight 2s ease-in-out backwards;
+    @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+            animation-delay: $i * 250ms;
+        }
+    }
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: hidden;
+
+    &:hover > .meal__price :first-of-type {
+        transform: translateX(-10px);
+        margin-left: 20px;
+        flex: 2;
+    }
+
+    &:hover > .meal__price :last-of-type {
+        flex: 1;
+        justify-content: space-around;
+        padding-left: 10%;
+    }
+
+    
+    &:hover > .meal__check {
+        font-weight: bold;
+        transform: translateX(0);
+        transition-duration: 600ms;
+
+        i.fas {
+            transform: rotate(0deg);
+        }
+    }
+
+    &__check {
+        background-color:$tertiary-color;
+        width: 70px;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(70px);
+        transition-duration: 500ms;
+
+        i.fas {
+            opacity: 1;
+            color:white;
+            font-size: 24px;
+            margin: 0;
+            transform: rotate(-360deg);
+            transition-duration: 600ms;
+        }
+    }
+    h3 {
+        margin: 0;
+        @include margin;
+        font-size: 1.1rem;
+        line-height: 2rem;
+    }
+    p {
+        @include margin;
+        margin-right:15px;
+        font-size: 0.8rem;
+    }
+
+    &__price {
+        display: flex;
+        justify-content: space-between;
+        & :first-of-type {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        }
+        & :last-of-type {
+            font-weight: bold;
+        }    
+    }  
+}
+
+
+.btn-order {
+    @include row;
+    padding: 15px;
+}
+
