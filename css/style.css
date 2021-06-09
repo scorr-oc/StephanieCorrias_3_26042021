@@ -377,6 +377,13 @@ header a {
 .meal:nth-child(5) {
   animation-delay: 1250ms;
 }
+.meal:hover > h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform: translateX(-70px);
+  margin-left: 80px;
+}
 .meal:hover > .meal__price :first-of-type {
   transform: translateX(-10px);
   margin-left: 20px;
@@ -384,7 +391,7 @@ header a {
 }
 .meal:hover > .meal__price :last-of-type {
   flex: 1;
-  justify-content: space-around;
+  transition-duration: 600ms;
   padding-left: 10%;
 }
 .meal:hover > .meal__check {
@@ -438,6 +445,7 @@ header a {
 }
 .meal__price :last-of-type {
   font-weight: bold;
+  margin-right: 15px;
 }
 
 .btn-order {
